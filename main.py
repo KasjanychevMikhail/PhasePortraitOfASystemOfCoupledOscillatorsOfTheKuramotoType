@@ -29,8 +29,8 @@ def rhs(s, v):
                        (-np.sin(v[4] - v[3] + 1.6) + 0.2 * np.sin(2 * (v[4] - v[3]) - 1.58)) +
                        (-np.sin(v[4] - v[4] + 1.6) + 0.2 * np.sin(2 * (v[4] - v[4]) - 1.58)))]
 
-def drawPhasePortrait(args, deltaY0=1, startY0=0, stopY0=5):
-    res = solve_ivp(rhs, (args[0], args[1]), [5, 3, 2, 0, 1])
+def drawPhasePortrait(args):
+    res = solve_ivp(rhs, (args[0], args[1]), [4.8, 3, 2.2, 0, 1])
     axs[0, 0].plot(res.y[0].T, res.y[1].T, 'b')
     axs[0, 1].plot(res.y[0].T, res.y[2].T, 'b')
     axs[0, 2].plot(res.y[0].T, res.y[4].T, 'b')
